@@ -113,6 +113,19 @@ a:hover {
   color: var(--color-text);
 }
 
+.nav-cta {
+  padding: 6px 14px;
+  background: var(--color-link);
+  color: white !important;
+  border-radius: 980px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.nav-cta:hover {
+  background: var(--color-link-hover);
+  color: white !important;
+}
+
 /* Mobile nav */
 .nav-toggle {
   display: none;
@@ -341,7 +354,11 @@ a:hover {
   font-weight: 600;
   letter-spacing: -0.025em;
   line-height: 1.125;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.article-header .btn {
+  margin-top: 8px;
 }
 
 .article-content {
