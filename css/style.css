@@ -1,0 +1,292 @@
+/* Ondrej Holub - Personal Website & Blog */
+/* Editorial, warm, distinctive aesthetic */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --color-bg: #faf8f5;
+  --color-surface: #fffefb;
+  --color-text: #2c2825;
+  --color-text-muted: #6b6560;
+  --color-accent: #c45c3e;
+  --color-accent-soft: #e8a99a;
+  --color-border: #e8e4df;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --max-width: 720px;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  background: var(--color-bg);
+  min-height: 100vh;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: var(--color-text);
+}
+
+/* Layout */
+.wrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* Header & Nav */
+.site-header {
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.site-title a {
+  color: inherit;
+}
+.site-title a:hover {
+  color: var(--color-accent);
+}
+
+.nav-list {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-sm);
+  list-style: none;
+}
+
+.nav-list a {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+.nav-list a:hover,
+.nav-list a[aria-current] {
+  color: var(--color-text);
+}
+
+/* Hero */
+.hero {
+  padding: var(--space-xl) 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* Sections */
+.section {
+  padding: var(--space-xl) 0;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: var(--space-lg);
+  color: var(--color-text);
+}
+
+/* About preview */
+.about-preview p {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+/* Blog cards */
+.post-list {
+  list-style: none;
+}
+
+.post-card {
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: opacity 0.2s ease;
+}
+.post-card:hover {
+  opacity: 0.9;
+}
+.post-card:last-child {
+  border-bottom: none;
+}
+
+.post-card h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+}
+.post-card h2 a {
+  color: inherit;
+}
+.post-card h2 a:hover {
+  color: var(--color-accent);
+}
+
+.post-meta {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.post-excerpt {
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+}
+
+/* Blog post page */
+.article-header {
+  padding: var(--space-xl) 0 var(--space-lg);
+}
+
+.article-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: var(--space-sm);
+}
+
+.article-content {
+  padding-bottom: var(--space-xl);
+}
+
+.article-content h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin: var(--space-lg) 0 var(--space-sm);
+}
+
+.article-content h3 {
+  font-size: 1.125rem;
+  margin: var(--space-md) 0 var(--space-xs);
+}
+
+.article-content p {
+  margin-bottom: var(--space-md);
+}
+
+.article-content ul, .article-content ol {
+  margin-bottom: var(--space-md);
+  padding-left: 1.5rem;
+}
+
+.article-content li {
+  margin-bottom: var(--space-xs);
+}
+
+.article-content code {
+  font-size: 0.9em;
+  background: var(--color-border);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+}
+
+.article-content pre {
+  background: var(--color-text);
+  color: var(--color-bg);
+  padding: var(--space-md);
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: var(--space-md);
+}
+.article-content pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+/* Footer */
+.site-footer {
+  padding: var(--space-lg) 0;
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--space-xl);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.site-footer a {
+  color: var(--color-text-muted);
+}
+.site-footer a:hover {
+  color: var(--color-accent);
+}
+
+/* Back link */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.9375rem;
+  margin-bottom: var(--space-lg);
+  color: var(--color-text-muted);
+}
+.back-link:hover {
+  color: var(--color-accent);
+}
+
+/* CTA button */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  background: var(--color-text);
+  color: var(--color-bg) !important;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.btn:hover {
+  background: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: var(--space-xl);
+  color: var(--color-text-muted);
+}
+.empty-state p {
+  margin-bottom: var(--space-sm);
+}
