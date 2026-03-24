@@ -222,12 +222,78 @@ a:hover {
   }
 }
 
+/* Landing hero with avatar */
+.hero-landing {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+@media (min-width: 734px) {
+  .hero-content {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    gap: 48px;
+  }
+  .hero-text { max-width: 520px; }
+}
+
+.hero-avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+}
+
+@media (min-width: 734px) {
+  .hero-avatar {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+.hero-text h1 {
+  margin-bottom: 8px;
+}
+
+.hero-tagline {
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.hero-sub {
+  font-size: 17px;
+  color: var(--color-text-secondary);
+  margin-bottom: 24px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+@media (min-width: 734px) {
+  .hero-actions { justify-content: flex-start; }
+}
+
 .hero h1 {
-  font-size: clamp(40px, 8vw, 64px);
+  font-size: clamp(40px, 8vw, 56px);
   font-weight: 600;
   line-height: 1.05;
   letter-spacing: -0.025em;
-  margin-bottom: 16px;
 }
 
 .hero p {
@@ -235,12 +301,16 @@ a:hover {
   line-height: 1.381;
   color: var(--color-text-secondary);
   max-width: 600px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (min-width: 734px) {
   .hero p {
     font-size: 24px;
+  }
+  .hero-landing .hero p {
+    margin-left: 0;
   }
 }
 
@@ -359,6 +429,277 @@ a:hover {
 
 .article-header .btn {
   margin-top: 8px;
+}
+
+/* About page */
+.about-header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+@media (min-width: 600px) {
+  .about-header-content {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.about-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.bio-list {
+  list-style: none;
+  padding-left: 0;
+}
+.bio-list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 12px;
+}
+.bio-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background: var(--color-link);
+  border-radius: 50%;
+}
+
+/* Company logos */
+.company-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+}
+
+.company-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 20px;
+  background: var(--color-surface);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--color-card-shadow);
+  min-width: 100px;
+}
+
+.company-logo img {
+  opacity: 0.9;
+}
+
+.company-logo span {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.company-initial {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-text);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+/* Experience list */
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.experience-item {
+  padding: 24px;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--color-card-shadow);
+}
+
+.experience-header {
+  margin-bottom: 16px;
+}
+
+.experience-header h3 {
+  font-size: 18px;
+  margin: 0 0 4px;
+}
+
+.experience-meta {
+  font-size: 14px;
+  color: var(--color-text-tertiary);
+}
+
+.experience-item ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.experience-item li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+}
+
+.experience-item li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-link);
+  font-weight: bold;
+}
+
+/* Expertise grid */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 600px) {
+  .expertise-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.expertise-group {
+  padding: 20px;
+  background: var(--color-surface);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--color-card-shadow);
+}
+
+.expertise-group h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--color-link);
+}
+
+.expertise-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.expertise-group li {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin-bottom: 6px;
+}
+
+/* Projects */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.project-card {
+  padding: 24px;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--color-card-shadow);
+  border-left: 4px solid var(--color-link);
+}
+
+.project-card h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.project-card p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--color-text-secondary);
+}
+
+.about-section {
+  margin-bottom: 48px;
+}
+
+.about-connect-cta {
+  margin-top: 32px;
+  margin-bottom: 0;
+}
+
+/* Connect page */
+.connect-section .article-header p {
+  margin-bottom: 40px;
+}
+
+.connect-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 600px) {
+  .connect-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.connect-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 24px;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--color-card-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+}
+
+.connect-card {
+  color: var(--color-text);
+}
+
+.connect-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  color: var(--color-text);
+}
+
+.connect-card h3 {
+  font-size: 18px;
+  margin: 12px 0 4px;
+}
+
+.connect-card p {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.connect-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-link);
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 12px;
 }
 
 .article-content {
