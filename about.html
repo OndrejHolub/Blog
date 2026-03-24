@@ -11,7 +11,10 @@
   <header class="site-header">
     <div class="wrapper">
       <h1 class="site-title"><a href="index.html">Ondrej Holub</a></h1>
-      <nav>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle menu">
+        <span></span>
+      </button>
+      <nav id="main-nav">
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="blog/">Blog</a></li>
@@ -39,5 +42,18 @@
       <p>&copy; 2025 Ondrej Holub · <a href="https://github.com/OndrejHolub/Blog">Source</a></p>
     </div>
   </footer>
+  <script>
+    (function() {
+      var toggle = document.querySelector('.nav-toggle');
+      var nav = document.querySelector('.nav-list');
+      if (toggle && nav) {
+        toggle.addEventListener('click', function() {
+          var expanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', !expanded);
+          nav.setAttribute('data-visible', !expanded);
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

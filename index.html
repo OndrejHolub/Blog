@@ -11,7 +11,10 @@
   <header class="site-header">
     <div class="wrapper">
       <h1 class="site-title"><a href="index.html">Ondrej Holub</a></h1>
-      <nav>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle menu">
+        <span></span>
+      </button>
+      <nav id="main-nav">
         <ul class="nav-list">
           <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="blog/">Blog</a></li>
@@ -33,7 +36,7 @@
       <div class="wrapper">
         <h2 class="section-title">About</h2>
         <p>I'm a developer and thinker who enjoys exploring ideas through writing. This site is where I share my journey, projects, and occasional musings.</p>
-        <a href="about.html" class="btn">Learn more</a>
+        <a href="about.html" class="btn btn-secondary">Learn more</a>
       </div>
     </section>
 
@@ -47,7 +50,7 @@
             <p class="post-excerpt">The first post on my new personal website. Here's what you can expect from this space.</p>
           </li>
         </ul>
-        <a href="blog/" class="btn" style="margin-top: 1rem;">View all posts</a>
+        <a href="blog/" class="btn btn-secondary" style="margin-top: 24px;">View all posts</a>
       </div>
     </section>
   </main>
@@ -57,5 +60,18 @@
       <p>&copy; 2025 Ondrej Holub · <a href="https://github.com/OndrejHolub/Blog">Source</a></p>
     </div>
   </footer>
+  <script>
+    (function() {
+      var toggle = document.querySelector('.nav-toggle');
+      var nav = document.querySelector('.nav-list');
+      if (toggle && nav) {
+        toggle.addEventListener('click', function() {
+          var expanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', !expanded);
+          nav.setAttribute('data-visible', !expanded);
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
